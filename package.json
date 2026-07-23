@@ -1,7 +1,7 @@
 {
   "name": "vin-pg-orm",
-  "version": "1.0.0",
-  "description": "This library is exclusive for react that utilize the flexbox.",
+  "version": "1.0.1",
+  "description": "a lightweight PostgreSQL ORM and query builder for TypeScript that helps you model tables as classes and compose SQL with chainable methods.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "files": [
