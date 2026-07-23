@@ -48,7 +48,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/petatemarvin26/vin-react.git"
+    "url": "git+ssh://git@github.com/petatemarvin26/vin-pg-orm.git"
   },
   "keywords": [
     "react",
@@ -62,9 +62,9 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/petatemarvin26/vin-react/issues"
+    "url": "https://github.com/petatemarvin26/vin-pg-orm/issues"
   },
-  "homepage": "https://github.com/petatemarvin26/vin-react#readme",
+  "homepage": "https://github.com/petatemarvin26/vin-pg-orm#readme",
   "devDependencies": {
     "@babel/core": "^7.29.0",
     "@babel/preset-env": "^7.29.5",
