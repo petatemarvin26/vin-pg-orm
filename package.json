@@ -1,0 +1,87 @@
+{
+  "name": "vin-pg-orm",
+  "version": "1.0.0",
+  "description": "This library is exclusive for react that utilize the flexbox.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./lib/classes": {
+      "import": "./lib/classes/index.js",
+      "types": "./lib/classes/index.d.ts",
+      "default": "./lib/classes/index.js"
+    },
+    "./lib/common": {
+      "import": "./lib/common/index.js",
+      "types": "./lib/common/index.d.ts",
+      "default": "./lib/classes/index.js"
+    }
+  },
+  "scripts": {
+    "prepare": "npx ts-patch install",
+    "types": "npx tspc",
+    "clean": "rm -rf ./lib",
+    "bundle": "npm run types; npx webpack --config ./config/webpack.config.js",
+    "build": "npm run clean && npm run bundle; npm run types",
+    "dev": "npm-watch"
+  },
+  "watch": {
+    "bundle": {
+      "patterns": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.css"
+      ],
+      "extensions": "ts,tsx,css",
+      "ignore": [
+        "node_modules",
+        "lib"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/petatemarvin26/vin-pg-orm.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "DOM"
+  ],
+  "author": {
+    "name": "Marvin Petate",
+    "email": "petatemarvin26@gmail.com",
+    "url": "https://marvin-petate.web.app"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petatemarvin26/vin-pg-orm/issues"
+  },
+  "homepage": "https://github.com/petatemarvin26/vin-pg-orm#readme",
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.5",
+    "@babel/preset-typescript": "^7.28.5",
+    "@svgr/webpack": "^8.1.0",
+    "@types/pg": "^8.20.0",
+    "babel-loader": "^10.1.1",
+    "fork-ts-checker-webpack-plugin": "^9.1.0",
+    "npm-watch": "^0.13.0",
+    "ts-patch": "^4.0.1",
+    "tsconfig-paths-webpack-plugin": "^4.2.0",
+    "typescript": "^6.0.3",
+    "typescript-transform-paths": "^4.0.0",
+    "webpack": "^5.107.1",
+    "webpack-cli": "^7.0.2"
+  },
+  "dependencies": {
+    "pg": "^8.22.0"
+  }
+}

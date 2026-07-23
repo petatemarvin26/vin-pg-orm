@@ -1,0 +1,34 @@
+name: deploy
+run-name: create build and deploy
+on:
+  release:
+    types: [created]
+
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          repository: ${{ github.repository }}
+          token: ${{ secrets.ACC3SS_T0K3N }}
+
+      - name: install dependencies
+        run: |
+          npm ci
+          npm install -g typescript ts-patch
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: build and deploy
+        run: |
+          npm run build
+          npm publish
