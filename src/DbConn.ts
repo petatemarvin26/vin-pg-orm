@@ -1,11 +1,12 @@
-import {Pool} from 'pg';
+import {Pool, PoolConfig} from 'pg';
 
 export default class DbConn {
   private pool: Pool;
   public constructor() {
     this.pool = new Pool();
   }
-  public connect() {
+  public connect(config?: PoolConfig) {
+    if (config) this.pool = new Pool(config);
     return this.pool.query('SELECT NOW()');
   }
 
@@ -16,16 +17,16 @@ export default class DbConn {
     }
     return this._instance;
   }
-  public static async connect() {
-    const db = this.getInstance();
-    return await db.connect();
+  public static async connect(config?: PoolConfig) {
+    const instance = this.getInstance();
+    return await instance.connect(config);
   }
   public static get pool() {
-    const db = this.getInstance();
-    return db.pool;
+    const instance = this.getInstance();
+    return instance.pool;
   }
   public static async getClient() {
-    const db = this.getInstance();
-    return await db.pool.connect();
+    const instance = this.getInstance();
+    return await instance.pool.connect();
   }
 }
