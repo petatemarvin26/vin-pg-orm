@@ -1,6 +1,6 @@
 {
   "name": "vin-pg-orm",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a lightweight PostgreSQL ORM and query builder for TypeScript that helps you model tables as classes and compose SQL with chainable methods.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
